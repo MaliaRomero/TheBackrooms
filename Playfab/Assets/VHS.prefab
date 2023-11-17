@@ -30,8 +30,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2569762361104150556}
-  - {fileID: 4677655352918815445}
-  - {fileID: 6756406121293858737}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -61.895, y: 0, z: 0}
 --- !u!1 &2891170295135555400
@@ -48,7 +46,7 @@ GameObject:
   - component: {fileID: 1790336980613471715}
   m_Layer: 0
   m_Name: wwq (1)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,11 +60,11 @@ Transform:
   m_GameObject: {fileID: 2891170295135555400}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.117317155, y: 0.043302935, z: 0.117317155}
+  m_LocalPosition: {x: 0.28576458, y: -0.122113764, z: 0.040987816}
+  m_LocalScale: {x: 0.20694505, y: 0.6609855, z: 0.4007146}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 879281056811525484}
+  m_Father: {fileID: 2569762361104150556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6176080638558867567
 MeshFilter:
@@ -133,7 +131,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -155,7 +153,7 @@ GameObject:
   - component: {fileID: 6450524463271091366}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +170,9 @@ Transform:
   m_LocalPosition: {x: -0.16199994, y: 0.008000001, z: -0.0119999945}
   m_LocalScale: {x: 0.5669, y: 0.06551269, z: 0.29276982}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4677655352918815445}
+  - {fileID: 6756406121293858737}
   m_Father: {fileID: 879281056811525484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6186224538095905374
@@ -240,7 +240,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 5212345737409730213}
   m_Layer: 0
   m_Name: wwq
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,11 +274,11 @@ Transform:
   m_GameObject: {fileID: 6892462162908769954}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.339, y: 0, z: 0}
-  m_LocalScale: {x: 0.117317155, y: 0.043302935, z: 0.117317155}
+  m_LocalPosition: {x: -0.31222424, y: -0.122113764, z: 0.040987816}
+  m_LocalScale: {x: 0.20694505, y: 0.6609855, z: 0.4007146}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 879281056811525484}
+  m_Father: {fileID: 2569762361104150556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8371752936390302377
 MeshFilter:
@@ -345,7 +345,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

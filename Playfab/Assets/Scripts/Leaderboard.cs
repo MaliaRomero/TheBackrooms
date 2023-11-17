@@ -4,6 +4,7 @@ using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using TMPro;
+using PlayFab.MultiplayerModels;
 
 public class Leaderboard : MonoBehaviour
 {
@@ -51,16 +52,41 @@ public class Leaderboard : MonoBehaviour
 
     public void SetLeaderboardEntry(int newScore)
     {
-        Debug.Log("Setting Leaderboard Entry");
-
-        ExecuteCloudScriptRequest request = new ExecuteCloudScriptRequest
+        bool useLegacyMethod = false;
+        if (useLegacyMethod)
         {
-            FunctionName = "UpdateHighscore",
-            FunctionParameter = new { score = newScore }
-        };
-        PlayFabClientAPI.ExecuteCloudScript(request,
-            result => DisplayLeaderboard(),
-            error => Debug.Log(error.ErrorMessage)
-        );
+            ExecuteCloudScriptRequest request = new ExecuteCloudScriptRequest
+            {
+                FunctionName = "UpdateHighScore",
+                FunctionParameter = new { score = newScore }
+            };
+            PlayFabClientAPI.ExecuteCloudScript(request,
+            result =>
+            {
+                Debug.Log(result);
+                DisplayLeaderboard();
+                Debug.Log(result.ToJson());
+            },
+            error =>
+            {
+                Debug.Log(error.ErrorMessage);
+                Debug.Log("ERROR");
+            }
+            );
+        }
+        else
+        {
+
+            PlayFabClientAPI.UpdatePlayerStatistics(new UpdatePlayerStatisticsRequest
+            {
+                Statistics = new List<StatisticUpdate>
+                {
+                    new StatisticUpdate { StatisticName = "FastestTime", Value = newScore },
+                }
+            },
+            result => { Debug.Log("User statistics updated"); },
+            error => { Debug.LogError(error.GenerateErrorReport()); }
+            );
+        }
     }
 }
